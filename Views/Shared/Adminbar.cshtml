@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/modern-business.css" rel="stylesheet" />
+
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Home">ITech</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+
+                    <li class="dropdown">
+                        <a href="Courses" class="dropdown-toggle" data-toggle="dropdown">Mobile Projects Upload <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li> 
+                                @Html.ActionLink("Android", "uploadAndroid1", "Admin")
+                                 
+                            </li>
+                            <li>
+
+                                @Html.ActionLink("IPhone", "uploadIPhone1", "Admin")
+
+                            </li>
+
+                             
+
+                        </ul>
+                    </li>
+
+
+
+
+
+                    <li class="dropdown">
+                        <a href="Courses" class="dropdown-toggle" data-toggle="dropdown">Web Projects Upload <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @Html.ActionLink("PHP", "uploadPHP1", "Admin")
+
+                            </li>
+                            <li>
+
+                                @Html.ActionLink("Asp.Net", "uploadDotNet1", "Admin")
+
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("Java", "uploadJava1", "Admin")
+                            </li>
+                             
+
+                        </ul>
+                    </li>
+                   
+
+                    <li class="dropdown">
+                        <a href="Courses" class="dropdown-toggle" data-toggle="dropdown">Mobile Projects show <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @Html.ActionLink("Android", "showAndroid1", "Admin")
+
+                            </li>
+                            <li>
+
+                                @Html.ActionLink("IPhone", "showIPhone1", "Admin")
+
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+
+                   
+                    <li class="dropdown">
+                        <a href="Courses" class="dropdown-toggle" data-toggle="dropdown">Web Projects show <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @Html.ActionLink("PHP", "showPHP1", "Admin")
+
+                            </li>
+                            <li>
+
+                                @Html.ActionLink("Asp.net", "showDotnet1", "Admin")
+
+                            </li>
+
+                            <li>
+
+                                @Html.ActionLink("Java", "showJava1", "Admin")
+
+                            </li>
+
+                        </ul>
+                       
+                    </li>
+                    
+                    <li>@Html.ActionLink("Log Out", "Logout", "Admin")</li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <br />
+
+
+
+
+
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

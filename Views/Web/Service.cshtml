@@ -1,0 +1,111 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+ }
+
+ 
+ 
+ @using Check.Models
+@model IEnumerable<Check.Models.Comment>
+ 
+<html>
+
+<head>
+    <title>Services</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/modern-business.css" rel="stylesheet" />
+
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+
+<body>
+    <br>
+    <div class="row" >
+
+        <div class="col-md-3" >
+
+            <div class="list-group-item-success">
+
+                <a href="#" class="list-group-item active">Services</a>
+                <a href="" class="list-group-item">IT Outsourcing</a>
+                <a href="" class="list-group-item">IT Learnings</a>
+                <a href="" class="list-group-item">IT Books Publications</a>
+                <a href="" class="list-group-item">Maintenance Service</a>
+
+             
+            </div>
+            
+        </div>
+       
+
+        <div class="col-xs-5">
+            
+            <div class="alert alert-success"><h1>IT Outsourcing </h1></div>
+            <p>ITech provides the solutions for small and medium businesses that cannot afford fulltime staff for software/website development, maintenance and support. Our services are specifically for those companies who has not grown to the level to justify the high cost of in-house Information Technology development and support staff.</p>
+
+            <div class="alert alert-success"><h1>IT Learnings </h1></div>
+            <p>ITech is a practical knowledge hub of Information Technology! IT Learnings
+            covers IT Trainings and IT Certifications.</p>
+
+            <div class="alert alert-success"><h1>IT Books Publications </h1></div>
+            <p>ITech focuses to provide quality IT books. We offer multiple books ranging for newbies to the professionals</p>
+
+            <div class="alert alert-success"><h1>Maintenance Service </h1></div>
+            <p>ITech is the preeminent service provider of back office solutions, including online and offline data entry services, data processing, web and data research and scanning services, bookkeeping, accounting data entry, and comprehensive accounting services.</p>
+
+             
+            </div>
+        
+
+    </div>
+
+
+    <hr>
+    <footer>
+        <div >
+            <div class="row" >
+
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h4 id="addComment">Leave a Comment:</h4>
+
+
+                    <form action="~/Comment/AddedPHPComment" >
+                        <div class="form-group">
+                            <label class="sr-only" for="form-username">Comment</label>
+                            <textarea rows="1" aria-disabled="true" name="Comments"   class="form-group form-control" placeholder="Comment" required data-validation-required-message="Please enter a Comment."></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Comment" />
+                    </form>
+                    <br>
+
+                </div>
+            </div>
+            
+            
+            <div class="col-lg-3 alert-success" style="margin-left:230px">
+
+                <label typeof="text" class="alert-danger" style="margin-left:30px">User Comments</label>
+                <ul>
+
+                    @foreach (var e in Model)
+                    {
+                        if (e.ServiceComments != null)
+                        {
+                            <li>@e.ServiceComments </li>
+                        }
+
+                    }
+                </ul>
+            </div>
+
+                    </div>
+                
+    </footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+﻿@{
+    Layout = "~/Views/Shared/Adminbar.cshtml";
+}
+
+  
+@model IEnumerable<Check.Models.Signup>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Admin Login</title>
+
+     
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/modern-business.css" rel="stylesheet" />
+
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Welcome
+                    <small>Admin</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="/Admin/AdminLogin">Home</a>
+                    </li>
+                    <li class="active">Services</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Image Header -->
+        <div class="row">
+            <div class="col-lg-12">
+              
+                <img src="~/Content/themes/base/images/admin.jpg" height="400" width="1140" />
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Service Panels -->
+        <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Courses Videos</h2>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <h4>PHP Videos</h4>
+                        <p>PHP Videos Upload and delete here.</p>
+                        <a href="/Admin/PHPVideos" class="btn btn-primary">PHP Videos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-car fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <h4>JavaScript Videos</h4>
+                        <p>JavaScript Videos Upload and delete here.</p>
+                        <a href="/Admin/JSVideos" class="btn btn-primary">JavaScript Videos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-support fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <h4>Java Videos</h4>
+                        <p>Java  Videos Upload and delete here.</p>
+                        <a href="/Admin/JavaVideos" class="btn btn-primary">Java Videos</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--///  Courses added by admin/////////////-->
+            <form role="form" action="../Admin/ADCourse">
+                <div class="col-md-3 col-sm-6">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-heading">
+                            <span class="fa-stack fa-5x">
+                                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fa fa-support fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </div>
+                        <div class="panel-body">
+                            <h4>Add New Course</h4>
+                            <input type="text" name="CourseName" /><br><br>
+                            <button type="submit" class="btn btn-primary">Add</button>
+                            <input type="hidden" name="Id" />
+                            <a href="../Admin/ViewCourse" class="btn btn-primary">View Courses</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- Service Tabs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Comments</h2>
+            </div>
+            <div class="col-lg-12">
+                <ul id="myTab" class="nav nav-tabs nav-justified">
+                    <li class="active">
+                        <a href="#service-one" data-toggle="tab"><i class="fa fa-tree"></i> PHP Comments</a>
+                    </li>
+                    <li class="">
+                        <a href="#service-two" data-toggle="tab"><i class="fa fa-car"></i> Java Comments</a>
+                    </li>
+                    <li class="">
+                        <a href="#service-three" data-toggle="tab"><i class="fa fa-support"></i> JavaScript Comments</a>
+                    </li>
+                    <li class="">
+                        <a href="#service-four" data-toggle="tab"><i class="fa fa-database"></i> Services Comments</a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="service-one">
+                        <ul>
+
+                            @foreach (var e in ViewBag.serviceComments)
+                            {
+                                if(e.ServiceComments!=null)
+                                { 
+                                <li>@e.ServiceComments</li>
+                                }
+                            }
+                            
+                                
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="service-two">
+                        <ul>
+                            @foreach (var e in ViewBag.serviceComments)
+                            {
+                                if (e.ServiceComments != null)
+                                {
+                                    <li>@e.ServiceComments</li>
+                                }
+                            }
+
+                            
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="service-three">
+                        <ul>
+                            @foreach (var e in ViewBag.courseComments)
+                            {
+                                if (e.CoursesComments != null)
+                                {
+                                    <li>@e.CoursesComments</li>
+                                }
+                            }
+
+                            }
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="service-four">
+                        <ul>
+                            @foreach (var e in ViewBag.courseComments)
+                            {
+                                if (e.CoursesComments != null)
+                                {
+                                    <li>@e.CoursesComments</li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service List -->
+        <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Registered Students List</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-tree fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">PHP Total Registered</h4>
+                        <h4 class="media-heading">&nbsp Names  &nbsp Courses</h4>
+                        
+                        
+                        <ul>                                                                                                                                         
+                                          
+                                        @foreach (var e in Model)
+                                        {
+                                            if(e.Course.Equals("PHP")) 
+                                            { 
+                                             <li>@e.FName &nbsp; &nbsp; @e.Course</li>
+                                            }
+                                       
+                                        }  
+                                                
+                           
+                        </ul>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">JavaScript Total Registered</h4>
+                        <h4 class="media-heading">&nbsp Names  &nbsp Courses</h4>
+
+
+                        <ul>
+
+                            @foreach (var e in Model)
+                            {
+                                if (e.Course.Equals("JavaScript"))
+                                {
+                                    <li>@e.FName &nbsp; &nbsp; @e.Course</li>}
+
+
+                                }
+
+
+                        </ul>
+                    </div>
+
+                </div>
+                 
+            </div>
+
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="pull-left">
+                        <span class="fa-stack fa-2x">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Java Total Registered</h4>
+                        <h4 class="media-heading">&nbsp Names  &nbsp Courses</h4>
+
+
+                        <ul>
+
+                            @foreach (var e in Model)
+                            {
+                                if (e.Course.Equals("Java"))
+                                {
+                                    <li>@e.FName &nbsp; &nbsp; @e.Course</li>}
+
+
+                            } 
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            
+        </div>
+        <!-- /.row -->
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2015</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

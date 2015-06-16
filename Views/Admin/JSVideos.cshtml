@@ -1,0 +1,108 @@
+﻿@{
+    Layout = "~/Views/Shared/Adminbar.cshtml";
+}
+
+@using Check.Models
+@model IEnumerable<Check.Models.JavaScript>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Courses</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/modern-business.css" rel="stylesheet" />
+
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    <!-- Custom CSS -->
+
+
+</head>
+
+<body>
+
+
+
+    <div class="row">
+        <div class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        ITech Professional Courses
+                        <small>JavaScript</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="/Admin/AdminLogin">Home</a>
+                        </li>
+                        <li class="active">JavaScript Videos</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /.row -->
+            <!-- Project One -->
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="portfolio-item.html" />
+
+                    @using (Html.BeginForm("DeleteJSVideos", "Admin", FormMethod.Post))
+                    {
+                        foreach (var s in Model)
+                        {
+                            if (s.Video != null)
+                            {
+                                <video width="320" height="300" controls>
+                                    <source src="@s.Video" type="video/mp4">
+
+
+                                </video>
+
+                                <input type="hidden" name="Id" value="@s.Id" />
+                                <input type="submit" class="btn btn-success" value="Delete Video" />
+                            }
+                <!--<a class="btn btn-primary" href="/Admin/DeleteJavaVideos">Delete Video</a>-->
+
+                        }
+
+
+                    }
+                </div>
+
+                <div class="col-xs-5">
+                    <h3>JavaScript Videos</h3>
+                    <h4>Learn JavaScript</h4>
+                    <p> Scripting Language</p>
+
+                    @using (Html.BeginForm("JSUploadVideo", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <br>
+
+                        <input type="file" name="file" class="btn-primary" />
+                        <br>
+                        <input type="submit" class="btn-primary" value="upload video" />
+                        <br>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2015</p>
+                </div>
+            </div>
+        </footer>
+     
+    <!-- /.container -->
+
+
+</body>
+</html>

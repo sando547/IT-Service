@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+@model Check.Models.Comment
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddComment</title>
+</head>
+<body>
+    <img src="~/Content/themes/base/images/comments.gif" height="400" width="1300" />
+    <div>
+        @using (Html.BeginForm("AddedComment", "Web", FormMethod.Post))
+        {
+            @Html.HiddenFor(m => m.Id)
+            @Html.LabelFor(m => m.ServiceComments)
+            @Html.EditorFor(m => m.ServiceComments)
+
+          
+            <input type="submit" value="Add Comment" />
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+@model Check.Models.JavaScript
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddJavaScriptComment</title>
+</head>
+<body>
+    <img src="~/Content/themes/base/images/comments.gif" height="400" width="1300" />
+    <div>
+        @using (Html.BeginForm("AddedJavaScriptComment", "Comment", FormMethod.Post))
+        {
+            @Html.LabelFor(m => m.Comments)
+            @Html.EditorFor(m => m.Comments)
+
+
+
+
+            <input type="submit" value="Add Comment" />
+        }
+    </div>
+</body>
+</html>

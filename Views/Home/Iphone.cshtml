@@ -1,0 +1,127 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using Check.Models
+@model IEnumerable<Check.Models.IPhone>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Iphone Development </title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/modern-business.css" rel="stylesheet" />
+
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+
+</head>
+<body>
+
+
+
+
+    <div class="col-md-6">
+
+        <img src="~/Content/themes/base/images/Iphone.jpg" height="400" width="1300" />
+
+
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Our Completed Projects
+                </h1>
+            </div>
+            <div class="col-md-6">
+                <div class="alert alert-success">
+                    <div class="panel-heading">
+                        <h4> Iphone Projects</h4>
+
+                    </div>
+                    @foreach (var e in Model)
+                        {
+                            <ul>
+                                <li><b>Project Name:</b> @e.ProjectName <br> <b>Description: </b> @e.Description</li><br>
+                            </ul>
+
+                         
+                        } 
+                </div>
+
+                
+                </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Modern Business Features</h2>
+            </div>
+            <div class="col-md-6">
+                <p>Automate your System rather than manaual:</p>
+                <ul>
+                    <li>
+                        Easy to us
+                    </li>
+                    <li>Save your Cost</li>
+                    <li>Your work Fast</li>
+                    <li>Environment Automated</li>
+                    <li>
+                        <strong>We Are Here for You</strong>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-6">
+
+                <img src="~/Content/themes/base/images/mobile.png" />
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+        <!-- Call to Action Section -->
+        <div class="col-md-2">
+            <a class="btn btn-lg btn-primary btn-block" href="/Web/Hireus">Hire us</a>
+
+        </div>
+
+        
+
+        <br>
+        <br>
+        <hr>
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2015</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.container -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
+</body>
+</html>

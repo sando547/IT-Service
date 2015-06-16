@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Picture</title>
+    
+
+</head>
+<body>
+    <img src="~/Content/themes/base/images/myprofile.jpg" height="400" width="1200"/>
+    <div class="text-center">
+        
+        <h6>Upload photo</h6>
+        <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+
+        @*@using (Html.BeginForm("UploadPicture", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input type="file" class="form-control">
+            <input type="submit" />
+        }*@
+
+        <form action="/Login/UploadPicture" enctype="multipart/form-data" method="post">
+            <input type="file" name="file" class="file_1">
+            <input type="submit" />
+        </form>
+    </div>
+</body>
+</html>

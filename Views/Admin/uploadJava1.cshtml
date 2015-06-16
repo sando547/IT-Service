@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/Adminbar.cshtml";
+}
+
+@model Check.Models.Java
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>uploadJava Project</title>
+
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/modern-business.css" rel="stylesheet" />
+
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+
+    <div class="col-lg-12">
+
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <img src="~/Content/themes/base/images/admin.jpg" height="400" width="1140" />
+    </div>
+
+    <h3>Add Here</h3>
+
+    <div>
+        <br><hr>
+        @using (Html.BeginForm("uploadJava2", "Admin", FormMethod.Post))
+        {
+            @Html.LabelFor(m => m.ProjectName)
+            @Html.TextBoxFor(m => m.ProjectName)
+
+            @Html.LabelFor(m => m.Description)
+            @Html.TextBoxFor(m => m.Description)
+            <input type="submit" value="Add Project" />
+
+            <hr>
+        }
+    </div>
+
+    <div class="col-lg-12">
+        <p>Copyright &copy; Your Website 2015</p>
+    </div>
+</body>
+</html>
