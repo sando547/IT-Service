@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>plz Login to Your Acount</h1>
+        <h1> Login to Your Acount</h1>
         <hr>
         <div class="row">
            
@@ -28,7 +28,7 @@
                Login 
                 </div>
                 
-                @using (Html.BeginForm("AfterLogin", "Login", FormMethod.Post, new  {@class="form-horizontal" }))
+                @*@using (Html.BeginForm("AfterLogin", "Login", FormMethod.Post, new  {@class="form-horizontal" }))
                 {
                     @Html.HiddenFor(m => m.Id)
                     @Html.ValidationMessageFor(m=>m.Email);
@@ -40,9 +40,9 @@
                     @Html.TextBoxFor(x => x.Password, new { @class = "form-control" });
                    <br>
                     <input type="submit" class="btn btn-success" value="Login">
-                }
+                }*@
            
-              <!-- <form class="form-horizontal" role="form" action="/Login/AfterLogin">
+             <form class="form-horizontal" role="form" action="/Login/AfterLogin">
 
 
                     <div class="form-group">
@@ -50,11 +50,17 @@
 
                         <div class="col-lg-8">
                             <input class="form-control" type="email" name="Email" required="required">
+                           <h2> @ViewBag.error</h2>
                         </div>
                     </div>
 
 
-                   
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Password:</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="password" name="Password" required="required">
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
@@ -65,7 +71,7 @@
                         </div>
                     </div>
                 </form>
-                  --> 
+                 
                
             </div>
         </div>
