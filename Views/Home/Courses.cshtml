@@ -41,27 +41,27 @@
             <!-- Project One -->
             <div class="row">
                 <div class="col-md-7">
+                   
+ 
+                    @foreach (var s in Model)
+                    {
+                        if (s.Video != null)
+                        {
+                            <video width="320" height="400" controls>
+                                <source src="@s.Video" type="video/mp4">
+                            </video>
 
-                    
-                          @foreach (var s in Model) { if (s.Video != null) {
-                        <video width="320" height="300" controls>
-                            <source src="@s.Video" type="video/mp4">
-                        </video>
+                        }
 
-    <form action="../Home/GetAudioFile" method="post" >
-
-        <input type="hidden" name="Video"  value="@s.Video">
-
-        <div class="col-md-5">
-            <h3>PHP Video 1</h3>
-            <h4>Introduction</h4>
-            <p> In this video you will learn about basics of PHP and itslanguage syntax</p>
-            <button class="btn btn-primary" type="submit">Download Video </button>
-        </div>
-    </form>
-                          }
-                          }
-</div>
+                    }
+                     
+                  </div>
+                <div class="col-md-5">
+                    <h3>PHP Video 1</h3>
+                    <h4>Introduction</h4>
+                    <p> In this video you will learn about basics of PHP language thst is most promising technology and its language syntax</p>
+                    <a class="btn btn-primary" href="/Home/Courses">Download Video </a>
+                </div>
             </div>
             <!-- /.row -->
             <hr>
@@ -77,7 +77,7 @@
 
                             <form action="~/Comment/AddedPHPComment">
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-user name">Comment</label>
+                                    <label class="sr-only" for="form-username">Comment</label>
                                     <textarea rows="1" aria-disabled="true" name="Comments" class="form-group form-control" placeholder="Comment" required data-validation-required-message="Please enter a Comment."></textarea>
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Comment" />
